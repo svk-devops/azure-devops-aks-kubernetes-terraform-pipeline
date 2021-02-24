@@ -49,3 +49,7 @@ resource "random_pet" "aksrandom" {
 
 }
 
+resource "random_integer" "aksrandom" {
+  min = 1
+  max = 5000
+}
