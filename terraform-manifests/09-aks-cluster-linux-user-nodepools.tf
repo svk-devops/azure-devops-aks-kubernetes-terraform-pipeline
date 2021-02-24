@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "linux101" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.aks_cluster.id
   max_count             = 3
   min_count             = 1
+  node_count            = 1
   max_pods              = 30
   mode                  = "User"
   name                  = "linux101"
