@@ -22,12 +22,6 @@ stages:
     - job: TerraformValidateJob
       continueOnError: false
       steps:
-      - task: PublishPipelineArtifact@1
-        displayName: Publish Artifacts
-        inputs:
-          targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          artifact: 'terraform-manifests-out'
-          publishLocation: 'pipeline'
       - task: TerraformInstaller@0
         displayName: Terraform Install
         inputs:
@@ -50,7 +44,12 @@ stages:
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
           allowTelemetryCollection: false
-
+      - task: PublishPipelineArtifact@1
+        displayName: Publish Artifacts
+        inputs:
+          targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
+          artifact: 'terraform-manifests-out'
+          publishLocation: 'pipeline'
 # Stage-2: Deploy Stages for Dev & QA
 # Deployment-1: Deploy Dev AKS Cluster
 ## Step-1: Define Variables for environments
