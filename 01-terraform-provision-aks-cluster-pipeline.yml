@@ -40,7 +40,7 @@ stages:
           backendType: 'azurerm'
           backendServiceArm: 'terraform-aks-azurerm-svc-con'
           backendAzureRmResourceGroupName: 'inf-terraform-rg'
-          backendAzureRmStorageAccountName: 'inf-terraform-rg'
+          backendAzureRmStorageAccountName: 'infterraformstatesvksa'
           backendAzureRmContainerName: 'tfstatefiles'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
