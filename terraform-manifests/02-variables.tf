@@ -14,7 +14,7 @@ variable "location" {
 variable "resource_group_name" {
   type = string
   description = "This variable defines the Resource Group"
-  default = "terraform-aks"
+  default = "terraform-aks1"
 }
 
 # Azure AKS Environment Name
@@ -43,7 +43,7 @@ variable "windows_admin_username" {
 # Windows Admin Password for k8s worker nodes
 variable "windows_admin_password" {
   type = string
-  default = "P@ssw0rd1234"
+  default = "P@ssw0rd1234!234!"
   description = "This variable defines the Windows admin password k8s Worker nodes"  
 }
 
